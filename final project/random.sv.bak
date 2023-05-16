@@ -1,0 +1,13 @@
+class Packet;
+	rand bit [2:0] data;
+endclass
+
+module td;
+	initial begin
+		Packet pkt = new ();
+		for (int i=0; i < 8; ++) begin
+			pkt.randomize();
+			$display ("itr=%0d data=0x%0h", i, pkt.data);
+		end
+	end
+endmodule
